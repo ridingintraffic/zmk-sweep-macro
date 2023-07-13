@@ -81,6 +81,12 @@
             tapping-term-ms = <200>;
             bindings = <&none>, <&bootloader>;
         };
+        tdclr: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&bt BT_CLR>;
     };
 
 
@@ -97,7 +103,7 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┤               ├──────────┼──────────┼──────────┼──────────┼──────────┤
  &kp LS(LG(A))  &kp LS(LG(V)) &none  &none       &none                          &mt LG(LALT) H  &hs LSHIFT J &lt NAV K &lt SYM L &lt OTH SEMI
 //├──────────┼──────────┼──────────┼──────────┼──────────┤               ├──────────┼──────────┼──────────┼──────────┼──────────┤
-     &none      &none     &none      &none      &tdrst                     &kp N      &kp M     &kp COMMA   &kp DOT    &kp FSLH
+   &tdclr      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2      &tdrst                     &kp N      &kp M     &kp COMMA   &kp DOT    &kp FSLH
 //╰──────────┴──────────┼──────────┼──────────┼─────────╯               ╰─────────┼───────────┼──────────┼──────────┼──────────╯
                  &none       &none        &none      &mt LC(LS(LALT)) SPACE &lt 3 ENTER       &kp RSHIFT
  //            ╰──────────────┴──────────────┴─────────────────╯    ╰─────────────────────┴───────────────┴───────────────╯
