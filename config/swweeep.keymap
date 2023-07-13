@@ -74,6 +74,13 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        tdrst: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&bootloader>;
+        };
     };
 
 
@@ -88,11 +95,11 @@
 //╭──────────┬──────────┬──────────┬──────────┬──────────╮               ╭──────────┬──────────┬──────────┬──────────┬──────────╮
   &kp C_VOL_UP &kp C_VOL_DN  &kp LSHIFT  &kp LG(MINUS)   &kp LG(PLUS)                    &kp Y      &kp U      &kp I      &kp O       &kp P
 //├──────────┼──────────┼──────────┼──────────┼──────────┤               ├──────────┼──────────┼──────────┼──────────┼──────────┤
- &kp LS(LG(A))  &kp LS(LG(V))   &lt NAV D &hs LSHIFT F  &kp G              &mt LG(LALT) H  &hs LSHIFT J &lt NAV K &lt SYM L &lt OTH SEMI
+ &kp LS(LG(A))  &kp LS(LG(V)) &none  &none       &none                          &mt LG(LALT) H  &hs LSHIFT J &lt NAV K &lt SYM L &lt OTH SEMI
 //├──────────┼──────────┼──────────┼──────────┼──────────┤               ├──────────┼──────────┼──────────┼──────────┼──────────┤
-  &kp C_VOL_DN      &kp X   &mt LCTL C &mt LALT V &mt LGUI B                      &kp N      &kp M     &kp COMMA   &kp DOT    &kp FSLH
+     &none      &none     &none      &none      &tdrst                     &kp N      &kp M     &kp COMMA   &kp DOT    &kp FSLH
 //╰──────────┴──────────┼──────────┼──────────┼─────────╯               ╰─────────┼───────────┼──────────┼──────────┼──────────╯
-                 &kp LSHIFT      &kp LGUI       &kp BACKSPACE       &mt LC(LS(LALT)) SPACE &lt 3 ENTER       &kp RSHIFT
+                 &none       &none        &none      &mt LC(LS(LALT)) SPACE &lt 3 ENTER       &kp RSHIFT
  //            ╰──────────────┴──────────────┴─────────────────╯    ╰─────────────────────┴───────────────┴───────────────╯
 
             >;
