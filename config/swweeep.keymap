@@ -74,7 +74,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        tdrst: tap_dance_1 {
+        tdboot: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
@@ -88,6 +88,14 @@
             tapping-term-ms = <200>;
             bindings = <&none>, <&bt BT_CLR>;
         };
+        tdreset: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&sys_reset>;
+        };
+
     };
 
 
@@ -102,14 +110,14 @@
 //╭──────────┬──────────┬──────────┬──────────┬──────────╮               ╭──────────┬──────────┬──────────┬──────────┬──────────╮
   &kp C_VOL_UP &kp C_VOL_DN  &kp C_PP  &kp LG(MINUS)   &kp LG(PLUS)                    &kp Y      &kp U      &kp I      &kp O       &kp P
 //├──────────┼──────────┼──────────┼──────────┼──────────┤               ├──────────┼──────────┼──────────┼──────────┼──────────┤
- &kp LS(LG(A))  &kp LS(LG(V)) &none  &none       &none                          &mt LG(LALT) H  &hs LSHIFT J &lt NAV K &lt SYM L &lt OTH SEMI
+ &kp LS(LG(A))  &kp LS(LG(V)) &none  &none       &tdreset                          &mt LG(LALT) H  &hs LSHIFT J &lt NAV K &lt SYM L &lt OTH SEMI
 //├──────────┼──────────┼──────────┼──────────┼──────────┤               ├──────────┼──────────┼──────────┼──────────┼──────────┤
-   &tdclr      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &tdrst                     &kp N      &kp M     &kp COMMA   &kp DOT    &kp FSLH
+   &tdclr      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &tdboot                     &kp N      &kp M     &kp COMMA   &kp DOT    &kp FSLH
 //╰──────────┴──────────┼──────────┼──────────┼─────────╯               ╰─────────┼───────────┼──────────┼──────────┼──────────╯
                  &none       &none        &kp LC(LS(LA(T)))      &mt LC(LS(LALT)) SPACE &lt 3 ENTER       &kp RSHIFT
  //            ╰──────────────┴──────────────┴─────────────────╯    ╰─────────────────────┴───────────────┴───────────────╯
 
             >;
-        }; 
+        };
     };
 };
