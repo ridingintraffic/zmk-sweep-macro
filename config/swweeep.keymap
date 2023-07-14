@@ -100,21 +100,21 @@
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&none>, <&&bt BT_SEL 0>;
+            bindings = <&none>, <&bt BT_SEL 0>;
         };
         tdbt1: tap_dance_4 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&none>, <&&bt BT_SEL 1>;
+            bindings = <&none>, <&bt BT_SEL 1>;
         };
         tdbt2: tap_dance_5 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&none>, <&&bt BT_SEL 2>;
+            bindings = <&none>, <&bt BT_SEL 2>;
         };
     };
 
