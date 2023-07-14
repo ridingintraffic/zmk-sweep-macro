@@ -88,7 +88,7 @@
             tapping-term-ms = <200>;
             bindings = <&none>, <&bt BT_CLR>;
         };
-        tdreset: tap_dance_1 {
+        tdreset: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
