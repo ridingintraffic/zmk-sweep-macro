@@ -95,7 +95,27 @@
             tapping-term-ms = <200>;
             bindings = <&none>, <&sys_reset>;
         };
-
+        tdbt0: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&&bt BT_SEL 0>;
+        };
+        tdbt1: tap_dance_4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&&bt BT_SEL 1>;
+        };
+        tdbt2: tap_dance_5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&&bt BT_SEL 2>;
+        };
     };
 
 
@@ -112,7 +132,7 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┤               ├──────────┼──────────┼──────────┼──────────┼──────────┤
  &kp LS(LG(A))  &kp LS(LG(V)) &none  &none       &tdreset                          &mt LG(LALT) H  &hs LSHIFT J &lt NAV K &lt SYM L &lt OTH SEMI
 //├──────────┼──────────┼──────────┼──────────┼──────────┤               ├──────────┼──────────┼──────────┼──────────┼──────────┤
-   &tdclr      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &tdboot                     &kp N      &kp M     &kp COMMA   &kp DOT    &kp FSLH
+   &tdclr      &tdbt0      &tdbt1     &tdbt2     &tdboot                     &kp N      &kp M     &kp COMMA   &kp DOT    &kp FSLH
 //╰──────────┴──────────┼──────────┼──────────┼─────────╯               ╰─────────┼───────────┼──────────┼──────────┼──────────╯
                  &none       &none        &kp LC(LS(LA(T)))      &mt LC(LS(LALT)) SPACE &lt 3 ENTER       &kp RSHIFT
  //            ╰──────────────┴──────────────┴─────────────────╯    ╰─────────────────────┴───────────────┴───────────────╯
